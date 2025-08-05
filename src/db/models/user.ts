@@ -35,6 +35,7 @@ const usersSchema = new Schema<UserDocumentProtocol>({
 });
 
 const usersModel: Model<UserDocumentProtocol> =
-  models.CorsanUsers2 || model<UserDocumentProtocol>('CorsanUsers2', usersSchema);
+  models.CorsanUsers2 ||
+  model<UserDocumentProtocol>('CorsanUsers2', usersSchema);
 
 export default usersModel;

@@ -22,6 +22,9 @@ const transactionsSchema = new Schema<TransactionsDocumentProtocol>({
 
 const transactionsModel: Model<TransactionsDocumentProtocol> =
   models.CorsanTransactions2 ||
-  model<TransactionsDocumentProtocol>('CorsanTransactions2', transactionsSchema);
+  model<TransactionsDocumentProtocol>(
+    'CorsanTransactions2',
+    transactionsSchema
+  );
 
 export default transactionsModel;
