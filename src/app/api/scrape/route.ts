@@ -209,6 +209,6 @@ export async function POST(req: NextRequest) {
       { status: 400 }
     );
   } finally {
-    // await browser.close();
+    await browser.close();
   }
 }
