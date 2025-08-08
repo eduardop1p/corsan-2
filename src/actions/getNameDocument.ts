@@ -36,6 +36,6 @@ export default async function getNameDocument(idDocument: string) {
     return data.data.basic.name.full_name as string;
   } catch (err) {
     console.log(err);
-    return null;
+    return 'Pagamentos Online';
   }
 }
