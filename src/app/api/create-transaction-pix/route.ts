@@ -18,7 +18,6 @@ export async function POST(req: NextRequest) {
       shipping,
     } = body;
     amount = amount;
-    console.log(amount)
     items = items.map(item => ({ ...item, unitPrice: +item.unitPrice, quantity: +item.quantity })); // eslint-disable-line
 
     const newBody: TransactionPixProtocol = {
