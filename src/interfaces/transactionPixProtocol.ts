@@ -38,7 +38,5 @@ export default interface TransactionPixProtocol {
     };
   };
   pix: { expiresInDays: number };
-  traceable: boolean;
-  ip: string;
   postbackUrl: string;
 }

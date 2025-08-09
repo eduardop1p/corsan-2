@@ -38,7 +38,7 @@ export default async function Page({ params }: Props) {
     name: userName,
     email: 'myemail@myemail.com',
     document: user.idDocument,
-    phone: '99985329744',
+    phone: '(11) 98765-4321',
   };
 
   return (

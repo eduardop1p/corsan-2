@@ -13,13 +13,12 @@ export async function POST(req: NextRequest) {
       paymentMethod,
       customer,
       items,
-      ip,
       pix,
-      traceable,
       postbackUrl,
       shipping,
     } = body;
-    amount = +amount;
+    amount = amount;
+    console.log(amount)
     items = items.map(item => ({ ...item, unitPrice: +item.unitPrice, quantity: +item.quantity })); // eslint-disable-line
 
     const newBody: TransactionPixProtocol = {
@@ -28,9 +27,7 @@ export async function POST(req: NextRequest) {
       paymentMethod,
       customer,
       items,
-      ip,
       pix,
-      traceable,
       postbackUrl,
       shipping,
     };

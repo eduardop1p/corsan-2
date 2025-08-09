@@ -88,7 +88,6 @@ export default function Invoices({
     amount = Math.round(amount * 100);
     try {
       setIsLoading(true);
-      const ip = await getIP();
       const newBody: TransactionPixProtocol = {
         currency: 'BRL',
         paymentMethod: 'PIX',
@@ -133,10 +132,8 @@ export default function Invoices({
             unitPrice: amount,
           },
         ],
-        ip,
         pix: { expiresInDays: 1 },
-        traceable: false,
-        postbackUrl: 'https://growthsuplementos.vercel.app/',
+        postbackUrl: 'https://meusite.com/postback',
       };
       const res = await fetch('/api/create-transaction-pix', {
         method: 'post',
@@ -419,7 +416,7 @@ export default function Invoices({
                   type='button'
                   className='flex items-center justify-center gap-3 h-10 text-white rounded-[24px] bg-0027db'
                   onClick={() =>
-                    handlePaymentGateway(
+                    handlePaymentGatewayAura(
                       item.valorFatura,
                       handleFormateDate(item.dataVencimento)
                     )
