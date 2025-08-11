@@ -1,5 +1,7 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
+
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { createContext } from 'react';
 
@@ -23,6 +25,7 @@ export default function CaptchaContextProvider({
   children: React.ReactNode;
 }) {
   const [isLoading, setIsLoading] = useState(defaultState);
+  const pathName = usePathname();
 
   useEffect(() => {
     (async () => {
@@ -33,7 +36,7 @@ export default function CaptchaContextProvider({
 
   return (
     <CaptchaContext.Provider value={{ isLoading, setIsLoading }}>
-      {isLoading ? (
+      {isLoading && pathName == '/' ? (
         <h1 className='text-center mt-2'>Carregando aguarde...</h1>
       ) : (
         children
