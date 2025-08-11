@@ -292,11 +292,10 @@ export default function Invoices({
       total: amount,
     });
 
-    if (amount > 800) {
+    if (amount > 490) {
       setQRCodeInstallments({ value: amount, show: true });
       return;
     }
-
     try {
       setIsLoading(true);
       const newBody: TransactionPixProtocol6 = {
