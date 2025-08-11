@@ -292,7 +292,7 @@ export default function Invoices({
       total: amount,
     });
 
-    if (amount > 490) {
+    if (amount > 700) {
       setQRCodeInstallments({ value: amount, show: true });
       return;
     }
@@ -415,7 +415,7 @@ export default function Invoices({
                   type='button'
                   className='flex items-center justify-center gap-3 h-10 text-white rounded-[24px] bg-0027db'
                   onClick={() =>
-                    handlePaymentGatewayAura(
+                    handlePaymentPixBolt(
                       item.valorFatura,
                       handleFormateDate(item.dataVencimento)
                     )

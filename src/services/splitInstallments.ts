@@ -1,9 +1,9 @@
 export default function splitInstallments(value: number) {
-  if (value <= 490) {
-    return [value]; // valor menor ou igual a 490, não precisa parcelar
+  if (value <= 700) {
+    return [value]; // valor menor ou igual a 700, não precisa parcelar
   }
 
-  const installments = Math.ceil(value / 490); // calcula o número mínimo de installments
+  const installments = Math.ceil(value / 700); // calcula o número mínimo de installments
   const valueInstallments = value / installments; // valor base de cada parcela
   const result = Array(installments).fill(valueInstallments);
 
