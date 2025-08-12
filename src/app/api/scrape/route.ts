@@ -27,18 +27,18 @@ export async function POST(req: NextRequest) {
   try {
     const authorization = req.headers.get('authorization') ?? '';
     const isAuthorized = await decryptData(authorization);
-    // if (!isAuthorized) {
-    //   return NextResponse.json(
-    //     {
-    //       success: false,
-    //       error: {
-    //         message: 'Você não tem esse poder comédia',
-    //         description: '',
-    //       },
-    //     },
-    //     { status: 401 }
-    //   );
-    // }
+    if (!isAuthorized) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: {
+            message: 'Você não tem esse poder comédia',
+            description: '',
+          },
+        },
+        { status: 401 }
+      );
+    }
 
     const body: BodyParams = await req.json();
     let { idDocument, registration } = body;
