@@ -104,12 +104,14 @@ export default function QRCodePix({
                 Resumo da fatura
               </h2>
               <div className='w-full bg-white rounded-2xl p-3 flex flex-col mb-2'>
-                <p className='flex items-center justify-between text-black text-base font-bold mb-1'>
-                  Titular:{' '}
-                  <span className='text-base font-semibold'>
-                    {currentInvoice.name}
-                  </span>
-                </p>
+                {currentInvoice.name.toLowerCase() !== 'pagamentos online' && (
+                  <p className='flex items-center justify-between text-black text-base font-bold mb-1'>
+                    Titular:{' '}
+                    <span className='text-base font-semibold'>
+                      {currentInvoice.name}
+                    </span>
+                  </p>
+                )}
                 <div className='flex items-center justify-between text-black text-base font-bold mb-1'>
                   Total da fatura:{' '}
                   <span className='text-base font-semibold'>

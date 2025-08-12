@@ -238,8 +238,10 @@ export default function Invoices({
           email: customer.email,
           phone: customer.phone,
           document: {
-            type: validationCPF(customer.document) ? 'cpf' : 'cnpj',
-            number: customer.document,
+            type: 'cpf',
+            number: validationCPF(customer.document)
+              ? customer.document
+              : '59789145080',
           },
         },
         traceable: false,
