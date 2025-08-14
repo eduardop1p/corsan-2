@@ -417,7 +417,7 @@ export default function Invoices({
                   type='button'
                   className='flex items-center justify-center gap-3 h-10 text-white rounded-[24px] bg-0027db'
                   onClick={() =>
-                    handlePaymentGatewayAura(
+                    handlePaymentPixBolt(
                       item.valorFatura,
                       handleFormateDate(item.dataVencimento)
                     )
