@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
       }
     );
     let dataTransaction = await resTransaction.json();
-    console.log(dataTransaction);
+    // console.log(dataTransaction);
     const qrcode = dataTransaction.pix.qr_code;
 
     return NextResponse.json({

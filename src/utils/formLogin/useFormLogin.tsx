@@ -4,7 +4,6 @@ import { FormEvent } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 import encryptData from '@/actions/encryptData';
-import getNameDocument from '@/actions/getNameDocument';
 import setCookie from '@/actions/setCookie';
 import { zodResolver } from '@hookform/resolvers/zod';
 
@@ -46,8 +45,6 @@ export default function useFormLogin() {
       }
       await setCookie('user-document', body.idDocument);
       await setCookie('user-registration', body.registration);
-      const userName = await getNameDocument(body.idDocument);
-      if (userName) await setCookie('user-name', userName);
       const userId = data.userId;
       location.href = `/segunda-via/${userId}`;
     } catch {

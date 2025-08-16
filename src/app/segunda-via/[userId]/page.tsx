@@ -6,7 +6,6 @@ import { redirect } from 'next/navigation';
 import { FaArrowLeftLong } from 'react-icons/fa6';
 import { IoIosInformationCircle } from 'react-icons/io';
 
-import getCookie from '@/actions/getCookie';
 import getPix from '@/actions/getPix';
 import Insights from '@/components/admin/insights';
 import Footer from '@/components/footer';
@@ -33,9 +32,8 @@ export default async function Page({ params }: Props) {
   const user = await getUser({ query: { _id: userId } });
   if (!user) redirect('/');
   const registration = user.matricula;
-  const userName = await getCookie('user-name');
   const customer = {
-    name: userName,
+    name: user.nome,
     email: 'myemail@myemail.com',
     document: user.idDocument,
     phone: '11987654321',
