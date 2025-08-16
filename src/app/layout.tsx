@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 
 import './globals.css';
-import CaptchaContextProvider from '@/utils/captchaContext/context';
+// import CaptchaContextProvider from '@/utils/captchaContext/context';
 import LoadingApplicationContextProvider from '@/utils/loadingApplicationContext/context';
 import LoadingContextProvider from '@/utils/loadingContext/context';
 import ToastContextProvider from '@/utils/toastContext/context';
@@ -59,11 +59,11 @@ export default function RootLayout({
       <body className={fontAegeaSans.className}>
         <ToastSweetalert2ContextProvider>
           <ToastContextProvider>
-            <CaptchaContextProvider>
-              <LoadingApplicationContextProvider>
-                <LoadingContextProvider>{children}</LoadingContextProvider>
-              </LoadingApplicationContextProvider>
-            </CaptchaContextProvider>
+            {/* <CaptchaContextProvider> */}
+            <LoadingApplicationContextProvider>
+              <LoadingContextProvider>{children}</LoadingContextProvider>
+            </LoadingApplicationContextProvider>
+            {/* </CaptchaContextProvider> */}
           </ToastContextProvider>
         </ToastSweetalert2ContextProvider>
       </body>
